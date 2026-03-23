@@ -1,0 +1,187 @@
+---
+// This top section (between ---) is the FRONTMATTER
+// It runs on the SERVER before the page loads - not in the browser
+// Use it for: imports, variables, data fetching
+
+// No imports needed yet - this component is self-contained
+---
+
+<!-- Everything below this line is HTML - what actually shows on the page -->
+
+<!-- HERO SECTION: The big intro at the top of your homepage -->
+<section id="hero">
+
+  <!-- GREETING: Small label above your name -->
+  <p id="greeting">Hello, I'm</p>
+
+  <!-- YOUR NAME: The biggest text on the page -->
+  <h1 id="name">Pakaphon Suksena</h1>
+
+  <!-- HANDLE: Your known online name -->
+  <p id="handle">@ momoiro workshop</p>
+
+  <!-- TAGLINE: One sentence about what you do -->
+  <p id="tagline">
+    I build web portfolios, Roblox games, Python tools, and educational content.
+  </p>
+
+  <!-- TAGS: Visual badges showing your skills -->
+  <!-- Each <span> is one badge - add or remove as you like -->
+  <div id="tags">
+    <span class="tag">Web Dev</span>
+    <span class="tag">Roblox / Luau</span>
+    <span class="tag">Python</span>
+    <span class="tag">Game Dev</span>
+    <span class="tag">Educational Content</span>
+  </div>
+
+  <!-- CTA BUTTONS: Call-to-action links -->
+  <!-- href="#" means "goes nowhere for now" - we'll update these later -->
+  <div id="buttons">
+    <a href="#projects" class="btn-primary">View My Work</a>
+    <a href="https://github.com/Momoiroart" target="_blank" class="btn-secondary">GitHub</a>
+  </div>
+
+</section>
+
+
+<!-- STYLE: CSS that only applies to THIS component -->
+<!-- Each .astro file can have its own <style> block - Astro keeps them separate automatically -->
+<style>
+  /* CSS VARIABLES: Your brand colors defined once, used everywhere */
+  /* To change a color, just edit it here - it updates everywhere */
+  :root {
+    --pink:     #ff6b9d;   /* Primary accent - used for highlights */
+    --cyan:     #4af0e8;   /* Secondary accent - used for tags */
+    --void:     #05030f;   /* Deep dark background */
+    --violet:   #7c4fd0;   /* Mid accent */
+    --lavender: #b48fff;   /* Light accent */
+  }
+
+  /* HERO SECTION: Full screen height, centered content */
+  #hero {
+    min-height: 100vh;          /* 100vh = 100% of the screen height */
+    display: flex;              /* flexbox = a layout system */
+    flex-direction: column;     /* stack children top to bottom */
+    justify-content: center;    /* center vertically */
+    padding: 0 2rem;            /* 2rem breathing room on left and right */
+    background-color: var(--void);  /* var() uses your CSS variable above */
+    max-width: 800px;           /* don't stretch too wide on big screens */
+    margin: 0 auto;             /* auto = center the whole section horizontally */
+  }
+
+  /* GREETING: Small text above your name */
+  #greeting {
+    color: var(--cyan);
+    font-size: 1rem;
+    letter-spacing: 0.2em;     /* space out the letters slightly */
+    text-transform: uppercase; /* makes all letters CAPS */
+    margin: 0 0 0.5rem 0;
+    font-family: 'Space Mono', monospace; /* monospace = looks like code */
+  }
+
+  /* NAME: The big headline */
+  #name {
+    color: white;
+    font-size: clamp(2.5rem, 6vw, 4.5rem); /* clamp() = min, preferred, max size */
+    font-weight: 700;
+    margin: 0 0 0.25rem 0;
+    line-height: 1.1;
+    /* gradient text effect - makes text use multiple colors */
+    background: linear-gradient(135deg, var(--pink), var(--lavender));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* HANDLE: The @momoiro workshop line */
+  #handle {
+    color: var(--lavender);
+    font-size: 1.1rem;
+    margin: 0 0 1.5rem 0;
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* TAGLINE: The one-sentence description */
+  #tagline {
+    color: #a0a0b0;            /* muted light grey */
+    font-size: 1.1rem;
+    line-height: 1.6;          /* comfortable reading spacing */
+    max-width: 500px;
+    margin: 0 0 2rem 0;
+  }
+
+  /* TAGS CONTAINER: The row of skill badges */
+  #tags {
+    display: flex;
+    flex-wrap: wrap;           /* wrap to next line if not enough space */
+    gap: 0.6rem;               /* space between each tag */
+    margin-bottom: 2.5rem;
+  }
+
+  /* SINGLE TAG: Each skill badge */
+  .tag {
+    background: transparent;
+    border: 1px solid var(--violet);
+    color: var(--lavender);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;      /* 999px = fully rounded pill shape */
+    font-size: 0.85rem;
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* BUTTONS CONTAINER: Side by side buttons */
+  #buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* SHARED BUTTON STYLES */
+  #buttons a {
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;     /* removes the underline from links */
+    transition: all 0.2s ease; /* smooth hover animation */
+    cursor: pointer;
+  }
+
+  /* PRIMARY BUTTON: Filled pink gradient */
+  .btn-primary {
+    background: linear-gradient(135deg, var(--pink), var(--violet));
+    color: white;
+    border: none;
+  }
+
+  /* What happens when you hover over the primary button */
+  .btn-primary:hover {
+    opacity: 0.85;
+    transform: translateY(-2px); /* moves button up 2px - subtle lift effect */
+  }
+
+  /* SECONDARY BUTTON: Outlined style */
+  .btn-secondary {
+    background: transparent;
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
+  }
+
+  .btn-secondary:hover {
+    background: var(--cyan);
+    color: var(--void);
+    transform: translateY(-2px);
+  }
+
+  /* RESPONSIVE: Adjustments for smaller screens (phones) */
+  /* @media = "apply these styles only when screen width is 480px or less" */
+  @media (max-width: 480px) {
+    #hero {
+      padding: 0 1.25rem;
+    }
+    #buttons {
+      flex-direction: column; /* stack buttons on top of each other on mobile */
+    }
+  }
+</style>
