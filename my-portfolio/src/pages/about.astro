@@ -2,3 +2,101 @@
 
 import Layout from "../layouts/Layout.astro";
 ---
+
+<Layout>
+    <section id = 'about'>
+
+        <p id="lable">About Me</p>
+
+        <h1 id="'title">Who Am I</h1>
+
+        <p id="bio">
+            I'm Pakaphon Suksena, a developer and creator based in Thailand.
+            I build web portfolio , Roblox game , Python tools, and educational
+            content related to all i siad. I go by Momoiroart online.
+        </p>
+        <div id="section-title">What I Work With</div>
+
+        <div id="skill-grid">
+            <dev class="skill-card">
+                <h3>Web Development</h3>
+                <p>Astro, React, HTML, CSS, Vercel</p>
+            </dev>
+            <dev class="skill-card">
+                <h3>Game Development</h3>
+                <p>Roblox Studio, Unity, Unreal, Pygame, RPG Maker</p>
+            </dev>
+            <dev class="skill-card">
+                <h3>Educational</h3>
+                <p>Roblox Game design, Unity Fundimental, Minecraft modding</p>
+            </dev>
+        </div>
+
+    </section>
+
+</Layout>
+
+<style>
+    #about{
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 8rem 2rem 4rem 2rem;
+    }
+    #lable{
+        color: #4af0e8;
+        font-size: 0.9rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-family: 'Space Mono', monospace;
+        margin:  0 0 0.5rem 0;
+    }
+
+    #title{
+        color: white;
+        font-size: 3rem;
+        font-weight: 700;
+        margin:  0 0 1.5rem 0;
+    }
+    #bio{
+        color: #a0a0b0;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        max-width: 600;
+        margin: 0 0 3rem 0;
+    }
+    #section-title{
+        color: #b48fff;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+    #skill-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .skill-card{
+        background: rgba(255, 255, 255, 0.004);
+        border: 1px solid rgba(124, 79, 208,0.3);
+        border-radius: 12px;
+        padding: 1.5rem;
+    }
+    .skill-card h3 {
+        color: #ff6b9d;
+        font-size: 1rem;
+        margin: 0 0 0.5rem 0;
+    }
+    .skill-card p{
+        color: #a0a0b0;
+        font-size: 0.9rem;
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 600px){
+        #skill-grid{
+            grid-template-columns: 1fr;
+        }
+    }
+    
+</style>
