@@ -13,11 +13,11 @@
 ## 🗺️ My Learning Path
 1. ✅ Understand what Astro is and why it's good for portfolios
 2. ✅ Set up the Astro project on my computer
-3. ⬜ Understand the folder structure
-4. ⬜ Create my first page
-5. ⬜ Build a Layout (shared header/footer)
-6. ⬜ Build reusable Components (cards, nav, hero section)
-7. ⬜ Style the site with CSS
+3. ✅ Understand the folder structure
+4. ✅ Create my first page (hero section)
+5. ✅ Build a Layout (shared fonts, title, global CSS)
+6. ✅ Build reusable Components (Welcome.astro hero + Navbar.astro)
+7. ✅ Style the site with CSS (brand colors, flexbox, fixed nav, hover effects)
 8. ⬜ Add my projects and about page
 9. ⬜ Deploy the site online for free
 
@@ -125,6 +125,16 @@ my-portfolio/
 - `npm create` = scaffold (generate) a new project from a template
 - `npm install` = download all packages the project needs
 - `npm run dev` = start local dev server at http://localhost:4321
+- Every .astro file = frontmatter (---) + HTML + `<style>`
+- `<slot />` in Layout = the hole where page content gets placed
+- Astro styles are SCOPED — CSS in one component won't affect others
+- To use a component: import it at the top, place it as a tag below
+- `position: fixed` = element sticks to the screen even when scrolling
+- `z-index` = controls which element sits on top of others
+- `backdrop-filter: blur()` = frosted glass effect behind an element
+- `padding` shorthand = top right bottom left (clockwise from top)
+- `var(--name)` = use a CSS variable defined in `:root {}`
+- `display: flex` + `justify-content: space-between` = push items to opposite ends
 
 ---
 
@@ -147,6 +157,9 @@ Once you understand your code, you can give AI tools very specific instructions:
 | 2026-03-23 | Started learning Astro | Understood what Astro is, folder structure, key concepts |
 | 2026-03-23 | Set up Astro project | Ran npm create, npm install, npm run dev. Site running at localhost:4321 ✅ |
 | 2026-03-23 | Learned Git basics | Commits, adding files, quotes rule, cd navigation |
+| 2026-03-23 | Built hero section | Replaced Welcome.astro with real content, brand colors, CSS variables |
+| 2026-03-23 | Built Navbar component | Created Navbar.astro from scratch, imported into index.astro, fixed positioning |
+| 2026-03-23 | Learned component importing | import + place pattern. Scoped styles. Layout slot explained |
 | | | |
 
 ---

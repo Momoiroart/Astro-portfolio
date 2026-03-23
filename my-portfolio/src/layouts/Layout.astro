@@ -2,6 +2,7 @@
 // Layout.astro - The wrapper that every page uses
 // Think of this as the picture FRAME - every page puts its content inside here
 // <slot /> is the empty space where each page's content appears
+import Navbar from "../components/Navbar.astro"
 ---
 
 <!doctype html>
@@ -27,6 +28,7 @@
   <body>
     <!-- SLOT: This is where each page's content goes -->
     <!-- When index.astro wraps content in <Layout>, it appears here -->
+     <Navbar />
     <slot />
   </body>
 </html>
