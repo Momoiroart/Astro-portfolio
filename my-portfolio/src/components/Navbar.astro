@@ -6,8 +6,48 @@
         <a href = '/' id = 'logo' >momoiroart</a>
 
         <ul id = "nav-links">
-            <li><a href ='/'>home </a></li>
-            <il><a href ='/abot'>about</a></il>
-            <li><a href ='/projects'>projrcts</a></li>
+            <li><a href ='/'>Home </a></li>
+            <il><a href ='/abot'>About</a></il>
+            <li><a href ='/projects'>Projects</a></li>
     </ul>
 </nav>
+
+
+<style>
+    #navbar {
+        position : fixed;
+        top : 0;
+        left = 0;
+        width = 100%;
+        display = flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background: rgba(5,3,15,0.85);
+        backdrop-filter: blur(10px);
+        z-index: 100;
+    }
+    #logo {
+        color: #ff6b9d;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+    }
+    #nav-links {
+        list-style:none ;
+        display: flex;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+    }
+    #nav-links a {
+        color: #b48fff;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.2s;
+    }
+    #nav-links a:hover {
+        color: #4af0e8;
+    }
+</style>

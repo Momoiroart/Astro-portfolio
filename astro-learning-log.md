@@ -12,7 +12,7 @@
 
 ## 🗺️ My Learning Path
 1. ✅ Understand what Astro is and why it's good for portfolios
-2. ⬜ Set up the Astro project on my computer
+2. ✅ Set up the Astro project on my computer
 3. ⬜ Understand the folder structure
 4. ⬜ Create my first page
 5. ⬜ Build a Layout (shared header/footer)
@@ -68,7 +68,7 @@ npm run dev
 ```
 
 ### My project is located at:
-`[fill this in after setup]`
+`C:\Users\Medypn\astrotranning\my-portfolio`
 
 ---
 
@@ -116,7 +116,15 @@ my-portfolio/
 > - "To change the background color of the hero, go to `src/components/Hero.astro` and find `background-color`"
 > - "The layout file is in `src/layouts/BaseLayout.astro` — edit this to change the header on every page"
 
--
+- Git commit messages with spaces MUST be wrapped in quotes: `git commit -m "my message"`
+- File paths with spaces also need quotes: `git add "My notes.md"`
+- Both `"double quotes"` and `'single quotes'` work for git messages
+- `cd ..` goes back up one folder level
+- `cd my-portfolio` goes into a folder
+- Node.js = the engine. npm = the toolbox that comes with it
+- `npm create` = scaffold (generate) a new project from a template
+- `npm install` = download all packages the project needs
+- `npm run dev` = start local dev server at http://localhost:4321
 
 ---
 
@@ -137,6 +145,8 @@ Once you understand your code, you can give AI tools very specific instructions:
 | Date | What I did | Notes |
 |------|-----------|-------|
 | 2026-03-23 | Started learning Astro | Understood what Astro is, folder structure, key concepts |
+| 2026-03-23 | Set up Astro project | Ran npm create, npm install, npm run dev. Site running at localhost:4321 ✅ |
+| 2026-03-23 | Learned Git basics | Commits, adding files, quotes rule, cd navigation |
 | | | |
 
 ---
