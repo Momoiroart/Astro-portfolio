@@ -18,8 +18,10 @@
 5. ✅ Build a Layout (shared fonts, title, global CSS)
 6. ✅ Build reusable Components (Welcome.astro hero + Navbar.astro)
 7. ✅ Style the site with CSS (brand colors, flexbox, fixed nav, hover effects)
-8. ⬜ Add my projects and about page
-9. ⬜ Deploy the site online for free
+8. ✅ Add About page with skills grid
+9. ✅ Push to GitHub
+10. ⬜ Build Projects page
+11. ✅ Deploy live on Vercel → https://astro-portfolio-bay-psi.vercel.app/
 
 ---
 
@@ -160,6 +162,9 @@ Once you understand your code, you can give AI tools very specific instructions:
 | 2026-03-23 | Built hero section | Replaced Welcome.astro with real content, brand colors, CSS variables |
 | 2026-03-23 | Built Navbar component | Created Navbar.astro from scratch, imported into index.astro, fixed positioning |
 | 2026-03-23 | Learned component importing | import + place pattern. Scoped styles. Layout slot explained |
+| 2026-03-23 | Built About page | New page from scratch, CSS Grid 2x2 layout, customized own content |
+| 2026-03-23 | Pushed to GitHub | https://github.com/Momoiroart/Astro-portfolio — 12 commits live |
+| 2026-03-23 | Deployed to Vercel | https://astro-portfolio-bay-psi.vercel.app/ — site is LIVE |
 | | | |
 
 ---
