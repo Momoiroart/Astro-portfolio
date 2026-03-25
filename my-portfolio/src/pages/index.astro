@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const currentPath = Astro.url.pathname;
 ---
 
-<Layout>
+<Layout isHome={true}>
   <section id="hero">
     <p id="greeting">Hello, I'm</p>
     <h1 id="name" transition:name="page-title">Pakaphon Suksena</h1>
@@ -12,6 +13,13 @@ import Layout from '../layouts/Layout.astro';
     <p id="typed-text">
       I'm a <span id="typed-role">Web Developer.</span>
     </p>
+
+    <!-- INLINE NAV FOR HOME PAGE: Links below the typing text -->
+    <nav id="home-nav">
+      <a href="/about" class={currentPath === '/about' || currentPath === '/about/' ? 'nav-active' : ''}>About</a>
+      <span class="nav-sep">|</span>
+      <a href="/projects" class={currentPath === '/projects' || currentPath === '/projects/' ? 'nav-active' : ''}>Projects</a>
+    </nav>
 
     <div id="tags">
       <span class="tag">Web Dev</span>
@@ -159,6 +167,43 @@ import Layout from '../layouts/Layout.astro';
   @keyframes blink {
     0%, 100% { border-color: var(--cyan); }
     50% { border-color: transparent; }
+  }
+
+  /* INLINE NAV FOR HOME PAGE */
+  #home-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  #home-nav a {
+    color: var(--lavender);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    background: rgba(124, 79, 208, 0.15);
+    border: 1px solid rgba(124, 79, 208, 0.3);
+    transition: all 0.2s ease;
+  }
+
+  #home-nav a:hover {
+    background: rgba(124, 79, 208, 0.3);
+    color: var(--cyan);
+    border-color: var(--cyan);
+    transform: translateY(-2px);
+  }
+
+  #home-nav a.nav-active {
+    background: rgba(74, 240, 232, 0.15);
+    color: var(--cyan);
+    border-color: var(--cyan);
+  }
+
+  .nav-sep {
+    color: var(--violet);
   }
 
   #tags {
