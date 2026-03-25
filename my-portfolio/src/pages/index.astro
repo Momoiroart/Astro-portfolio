@@ -1,6 +1,7 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -8,5 +9,82 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<Welcome />
+	
+	<!-- HERO SECTIO -->
+
+	 <section id="hero" class="animate">
+		<p id="greeting">Hello, I'm</p>
+		<h1 id="name">Pakaphon Suksena</h1>
+		<p id="handle">@ momoiroart</p>
+		<p id="tagline">
+			I buil web portfolios, Roblox games, Python tools, and educational content.
+		</p>
+		<div id="tags">
+			<span class="tag">Web Dev</span>
+			<span class="tag">Roblox / Luau</span>
+			<span class="tag">Unity</span>
+			<span class="tag">Unreal Engine</span>
+			<span class="tag">RPG Maker</span>
+			<span class="tag">Python</span>
+			<span class="tag">Game Dev</span>
+			<span class="tag">Educational Content</span>
+
+		</div>
+	 </section>
+
+
+	 <!-- ABOUT SCETION -->
+	  <section id="about" class="animate">
+		<p class="section-label">About Me</p>
+		<h2 class="section-title">Who Am I</h2>
+		<p class="section-text">
+			I'm Pakaphon Suksena, a developer and creator based in Thailand.
+            I build web portfolio , Roblox game , Python tools, and educational
+            content related to all i siad. I go by Momoiroart online.
+		</p>
+		<div class="section-subtitle">What I Work With</div>
+		<div id="skill-grid">
+			<div class="skill-card">
+				<h3>Web Development</h3>
+				<p>Astro, React, HTML, CSS, Vercel</p>
+			</div>
+			<dev class="skill-card">
+                <h3>Game Development</h3>
+                <p>Roblox Studio, Unity, Unreal, Pygame, RPG Maker</p>
+            </dev>
+            <dev class="skill-card">
+                <h3>Educational</h3>
+                <p>Roblox Game design, Unity Fundimental, Minecraft modding</p>
+            </dev>
+		</div>
+
+	  </section>
+
+	<!-- PROJECT SECTION -->
+	 <section id="projects" class="animate">
+		<p class="section-label">My Work</p>
+		<h2 class="section-title">Projects</h2>
+		<div id="project-grid">
+			<ProjectCard
+				title="Your Life Style"
+				description="A cozy Roblox life sim with dialogue, NPCs, and relationships."
+				tags={["Roblox", "Luau", "GameDev"]}
+				link="https://www.roblox.com/games/your-life-style"
+			/>
+			<ProjectCard
+				title="Momoiro Portfolio"
+				description="My personal art portfolio with cosmic space aesthetic."
+				tags={["HTML", "CSS", "Vercel"]}
+				link="https://momoiro-portfolio-dual.vercel.app"
+			/>
+			<ProjectCard
+				title="Learn Guide"
+				description="Educational site for AI tutorials with dark edu-tech theme."
+				tags={["Astro", "React", "Vercel"]}
+				link="https://learn-guide.vercel.app"
+			/>
+		</div>
+	 </section>
+	  
 </Layout>
+ 
