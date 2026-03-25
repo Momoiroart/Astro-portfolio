@@ -1,102 +1,155 @@
 ---
-
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-    <section id = 'about'>
+  <section id="about">
+    <p class="section-label">About Me</p>
+    <h1 class="section-title" transition:name="page-title">Who Am I</h1>
+    <p class="section-text">
+      I'm Pakaphon Suksena, a developer and creator based in Thailand.
+      I build web portfolios, Roblox games, Python tools, and educational
+      content. I go by Momoiroart online.
+    </p>
 
-        <p id="lable">About Me</p>
+    <div class="section-subtitle">What I Work With</div>
+    <div id="skill-grid">
+      <div class="skill-card">
+        <h3>Web Development</h3>
+        <p>Astro, React, HTML, CSS, Vercel</p>
+      </div>
+      <div class="skill-card">
+        <h3>Game Development</h3>
+        <p>Roblox Studio, Unity, Unreal, Pygame, RPG Maker</p>
+      </div>
+      <div class="skill-card">
+        <h3>Educational</h3>
+        <p>Roblox Game design, Unity Fundamental, Minecraft modding</p>
+      </div>
+    </div>
 
-        <h1 id="'title">Who Am I</h1>
-
-        <p id="bio">
-            I'm Pakaphon Suksena, a developer and creator based in Thailand.
-            I build web portfolio , Roblox game , Python tools, and educational
-            content related to all i siad. I go by Momoiroart online.
-        </p>
-        <div id="section-title">What I Work With</div>
-
-        <div id="skill-grid">
-            <dev class="skill-card">
-                <h3>Web Development</h3>
-                <p>Astro, React, HTML, CSS, Vercel</p>
-            </dev>
-            <dev class="skill-card">
-                <h3>Game Development</h3>
-                <p>Roblox Studio, Unity, Unreal, Pygame, RPG Maker</p>
-            </dev>
-            <dev class="skill-card">
-                <h3>Educational</h3>
-                <p>Roblox Game design, Unity Fundimental, Minecraft modding</p>
-            </dev>
-        </div>
-
-    </section>
-
+    <div class="cta-row">
+      <a href="/projects" class="btn-primary">View Projects</a>
+      <a href="/" class="btn-secondary">Back Home</a>
+    </div>
+  </section>
 </Layout>
 
 <style>
-    #about{
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 8rem 2rem 4rem 2rem;
-    }
-    #lable{
-        color: #4af0e8;
-        font-size: 0.9rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        font-family: 'Space Mono', monospace;
-        margin:  0 0 0.5rem 0;
-    }
+  :root {
+    --pink: #ff6b9d;
+    --cyan: #4af0e8;
+    --void: #05030f;
+    --violet: #7c4fd0;
+    --lavender: #b48fff;
+  }
 
-    #title{
-        color: white;
-        font-size: 3rem;
-        font-weight: 700;
-        margin:  0 0 1.5rem 0;
-    }
-    #bio{
-        color: #a0a0b0;
-        font-size: 1.1rem;
-        line-height: 1.8;
-        max-width: 600;
-        margin: 0 0 3rem 0;
-    }
-    #section-title{
-        color: #b48fff;
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 1.5rem;
-    }
-    #skill-grid{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-    .skill-card{
-        background: rgba(255, 255, 255, 0.004);
-        border: 1px solid rgba(124, 79, 208,0.3);
-        border-radius: 12px;
-        padding: 1.5rem;
-    }
-    .skill-card h3 {
-        color: #ff6b9d;
-        font-size: 1rem;
-        margin: 0 0 0.5rem 0;
-    }
-    .skill-card p{
-        color: #a0a0b0;
-        font-size: 0.9rem;
-        margin: 0;
-        line-height: 1.6;
-    }
+  #about {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 8rem 2rem 4rem 2rem;
+    min-height: 100vh;
+  }
 
-    @media (max-width: 600px){
-        #skill-grid{
-            grid-template-columns: 1fr;
-        }
-    }
-    
+  .section-label {
+    color: var(--cyan);
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: 'Space Mono', monospace;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .section-title {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .section-text {
+    color: #a0a0b0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 0 3rem 0;
+  }
+
+  .section-subtitle {
+    color: var(--lavender);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  #skill-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .skill-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(124, 79, 208, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .skill-card:hover {
+    border-color: var(--pink);
+    transform: translateY(-3px);
+  }
+
+  .skill-card h3 {
+    color: var(--pink);
+    font-size: 1rem;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .skill-card p {
+    color: #a0a0b0;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cta-row a {
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--pink), var(--violet));
+    color: white;
+  }
+
+  .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
+  }
+
+  .btn-secondary:hover {
+    background: var(--cyan);
+    color: var(--void);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 600px) {
+    #skill-grid { grid-template-columns: 1fr; }
+  }
 </style>

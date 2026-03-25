@@ -1,54 +1,58 @@
 ---
-// Layout.astro - The wrapper that every page uses
-// Think of this as the picture FRAME - every page puts its content inside here
-// <slot /> is the empty space where each page's content appears
+// Layout.astro - The wrapper for every page
+// VIEW TRANSITIONS: Makes page switches feel like a SPA (no reload)
+// isHome prop: when true, hides the top navbar (homepage has its own nav)
 import Navbar from "../components/Navbar.astro"
+import { ClientRouter } from "astro:transitions";
+
+const { isHome = false } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- META TAGS: Technical info about the page - not visible to users -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />  <!-- makes it mobile-friendly -->
-
-    <!-- FAVICON: The small icon in the browser tab -->
+    <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-    <!-- PAGE TITLE: Shows in the browser tab -->
     <title>Pakaphon Suksena — momoiro workshop</title>
 
-    <!-- GOOGLE FONTS: Load your brand fonts from the internet -->
-    <!-- We load them here in the Layout so ALL pages get the same fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- VIEW TRANSITIONS: This one line enables smooth page transitions -->
+    <ClientRouter />
   </head>
 
   <body>
-    <!-- SLOT: This is where each page's content goes -->
-    <!-- When index.astro wraps content in <Layout>, it appears here -->
-     <Navbar />
-    <slot />
+    {!isHome && <Navbar />}
+    <main transition:animate="slide">
+      <slot />
+    </main>
   </body>
 </html>
 
 <style>
-  /* GLOBAL STYLES: These apply to the ENTIRE site, every page */
-  /* Because this is the Layout, styles here are shared everywhere */
-
-  /* CSS RESET: Remove browser default spacing */
   *, *::before, *::after {
-    box-sizing: border-box; /* makes sizing more predictable */
+    box-sizing: border-box;
   }
 
-  html, body {
-    margin: 0;               /* remove default white space around edges */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
     padding: 0;
     width: 100%;
-    min-height: 100%;
-    background-color: #05030f; /* --void color: deep dark background */
-    font-family: 'Outfit', sans-serif; /* default font for all text */
+    min-height: 100vh;
+    background-color: #05030f;
+    font-family: 'Outfit', sans-serif;
     color: white;
+  }
+
+  main {
+    min-height: 100vh;
   }
 </style>

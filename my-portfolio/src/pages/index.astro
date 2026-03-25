@@ -1,90 +1,229 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	
-	<!-- HERO SECTIO -->
+  <section id="hero">
+    <p id="greeting">Hello, I'm</p>
+    <h1 id="name" transition:name="page-title">Pakaphon Suksena</h1>
+    <p id="handle">@ momoiroart</p>
 
-	 <section id="hero" class="animate">
-		<p id="greeting">Hello, I'm</p>
-		<h1 id="name">Pakaphon Suksena</h1>
-		<p id="handle">@ momoiroart</p>
-		<p id="tagline">
-			I buil web portfolios, Roblox games, Python tools, and educational content.
-		</p>
-		<div id="tags">
-			<span class="tag">Web Dev</span>
-			<span class="tag">Roblox / Luau</span>
-			<span class="tag">Unity</span>
-			<span class="tag">Unreal Engine</span>
-			<span class="tag">RPG Maker</span>
-			<span class="tag">Python</span>
-			<span class="tag">Game Dev</span>
-			<span class="tag">Educational Content</span>
+    <!-- TYPING EFFECT: Roles cycle through automatically -->
+    <p id="typed-text">
+      I'm a <span id="typed-role">Web Developer.</span>
+    </p>
 
-		</div>
-	 </section>
-
-
-	 <!-- ABOUT SCETION -->
-	  <section id="about" class="animate">
-		<p class="section-label">About Me</p>
-		<h2 class="section-title">Who Am I</h2>
-		<p class="section-text">
-			I'm Pakaphon Suksena, a developer and creator based in Thailand.
-            I build web portfolio , Roblox game , Python tools, and educational
-            content related to all i siad. I go by Momoiroart online.
-		</p>
-		<div class="section-subtitle">What I Work With</div>
-		<div id="skill-grid">
-			<div class="skill-card">
-				<h3>Web Development</h3>
-				<p>Astro, React, HTML, CSS, Vercel</p>
-			</div>
-			<dev class="skill-card">
-                <h3>Game Development</h3>
-                <p>Roblox Studio, Unity, Unreal, Pygame, RPG Maker</p>
-            </dev>
-            <dev class="skill-card">
-                <h3>Educational</h3>
-                <p>Roblox Game design, Unity Fundimental, Minecraft modding</p>
-            </dev>
-		</div>
-
-	  </section>
-
-	<!-- PROJECT SECTION -->
-	 <section id="projects" class="animate">
-		<p class="section-label">My Work</p>
-		<h2 class="section-title">Projects</h2>
-		<div id="project-grid">
-			<ProjectCard
-				title="Your Life Style"
-				description="A cozy Roblox life sim with dialogue, NPCs, and relationships."
-				tags={["Roblox", "Luau", "GameDev"]}
-				link="https://www.roblox.com/games/your-life-style"
-			/>
-			<ProjectCard
-				title="Momoiro Portfolio"
-				description="My personal art portfolio with cosmic space aesthetic."
-				tags={["HTML", "CSS", "Vercel"]}
-				link="https://momoiro-portfolio-dual.vercel.app"
-			/>
-			<ProjectCard
-				title="Learn Guide"
-				description="Educational site for AI tutorials with dark edu-tech theme."
-				tags={["Astro", "React", "Vercel"]}
-				link="https://learn-guide.vercel.app"
-			/>
-		</div>
-	 </section>
-	  
+    <div id="tags">
+      <span class="tag">Web Dev</span>
+      <span class="tag">Roblox / Luau</span>
+      <span class="tag">Unity</span>
+      <span class="tag">Unreal Engine</span>
+      <span class="tag">Python</span>
+      <span class="tag">Game Dev</span>
+      <span class="tag">Educational Content</span>
+    </div>
+    <div id="buttons">
+      <a href="/about" class="btn-primary">About Me</a>
+      <a href="https://github.com/Momoiroart" target="_blank" class="btn-secondary">GitHub</a>
+    </div>
+  </section>
 </Layout>
- 
+
+<!-- TYPING EFFECT SCRIPT -->
+<script>
+  const roles = [
+    "Web Developer.",
+    "Game Developer.",
+    "Educator.",
+    "Roblox Creator.",
+    "Python Enthusiast."
+  ];
+
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const typedRole = document.getElementById('typed-role');
+
+  function typeEffect() {
+    if (!typedRole) return;
+
+    const currentRole = roles[roleIndex];
+
+    if (!isDeleting) {
+      // Typing forward
+      typedRole.textContent = currentRole.substring(0, charIndex + 1);
+      charIndex++;
+
+      if (charIndex === currentRole.length) {
+        // Pause at end of word, then start deleting
+        isDeleting = true;
+        setTimeout(typeEffect, 1500);
+        return;
+      }
+    } else {
+      // Deleting backward
+      typedRole.textContent = currentRole.substring(0, charIndex - 1);
+      charIndex--;
+
+      if (charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+      }
+    }
+
+    // Typing speed: faster when deleting
+    const speed = isDeleting ? 50 : 100;
+    setTimeout(typeEffect, speed);
+  }
+
+  // Start the typing effect
+  typeEffect();
+</script>
+
+<style>
+  :root {
+    --pink: #ff6b9d;
+    --cyan: #4af0e8;
+    --void: #05030f;
+    --violet: #7c4fd0;
+    --lavender: #b48fff;
+  }
+
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 2rem 2rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    /* Fade in on page load */
+    animation: fadeInUp 0.6s ease both;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  #greeting {
+    color: var(--cyan);
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: 'Space Mono', monospace;
+    margin: 0 0 0.5rem 0;
+  }
+
+  #name {
+    color: white;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    margin: 0 0 0.25rem 0;
+    line-height: 1.1;
+    background: linear-gradient(135deg, var(--pink), var(--lavender));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  #handle {
+    color: var(--lavender);
+    font-size: 1.1rem;
+    margin: 0 0 1.5rem 0;
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* TYPING EFFECT STYLES */
+  #typed-text {
+    color: #a0a0b0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0 0 2rem 0;
+  }
+
+  #typed-role {
+    color: var(--cyan);
+    font-weight: 600;
+    border-right: 2px solid var(--cyan);
+    padding-right: 4px;
+    animation: blink 0.8s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { border-color: var(--cyan); }
+    50% { border-color: transparent; }
+  }
+
+  #tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .tag {
+    background: transparent;
+    border: 1px solid var(--violet);
+    color: var(--lavender);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-family: 'Space Mono', monospace;
+    transition: all 0.2s ease;
+  }
+
+  .tag:hover {
+    border-color: var(--pink);
+    color: var(--pink);
+  }
+
+  #buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  #buttons a {
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--pink), var(--violet));
+    color: white;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
+  }
+
+  .btn-secondary:hover {
+    background: var(--cyan);
+    color: var(--void);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 480px) {
+    #buttons {
+      flex-direction: column;
+    }
+  }
+</style>

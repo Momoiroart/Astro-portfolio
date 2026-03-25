@@ -4,63 +4,108 @@ import ProjectCard from "../components/ProjectCard.astro";
 ---
 
 <Layout>
-    <section id="projects">
-        <p id="label">My Work</p>
-        <h1 id="title">Projects</h1>
+  <section id="projects">
+    <p class="section-label">My Work</p>
+    <h1 class="section-title" transition:name="page-title">Projects</h1>
 
-        <div id="project-grid">
-            <ProjectCard
-                title="Your Life Style"
-                description="A cozy Roblox life sim with dialogue, NPCs, and relationships."
-                tags={["Roblox","Luau","GameDev"]}
-                link="https://www.roblox.com/games/your-life-style"
-            />
-            <ProjectCard
-                title="Momoiro Portfolio"
-                description="My personal art portfolio with cosmic apace aesthetic."
-                tags={["HTML","CSS","Vercel"]}
-                link="https://momoiro-portfolio-dual.vercel.app"
-            />
-            <ProjectCard
-                title="Learn Guide"
-                description="Educational site for AI tutorials with dark edu-tech theme."
-                tags={["Astro","React","Vercel"]}
-                link="https://learn-guide.vercel.app"
-            />
-            <!-- We'll add cards here -->
-        </div>
-    </section>
+    <div id="project-grid">
+      <ProjectCard
+        title="Your Life Style"
+        description="A cozy Roblox life sim with dialogue, NPCs, and relationships."
+        tags={["Roblox", "Luau", "GameDev"]}
+        link="https://www.roblox.com/games/your-life-style"
+      />
+      <ProjectCard
+        title="Momoiro Portfolio"
+        description="My personal art portfolio with cosmic space aesthetic."
+        tags={["HTML", "CSS", "Vercel"]}
+        link="https://momoiro-portfolio-dual.vercel.app"
+      />
+      <ProjectCard
+        title="Learn Guide"
+        description="Educational site for AI tutorials with dark edu-tech theme."
+        tags={["Astro", "React", "Vercel"]}
+        link="https://learn-guide.vercel.app"
+      />
+    </div>
+
+    <div class="cta-row">
+      <a href="/about" class="btn-primary">About Me</a>
+      <a href="/" class="btn-secondary">Back Home</a>
+    </div>
+  </section>
 </Layout>
 
-
 <style>
-    #projects {
-        max-width: 10000px;
-        margin: 0 auto;
-        padding: 8rem 2rem 4rem 2rem;
-    }
+  :root {
+    --pink: #ff6b9d;
+    --cyan: #4af0e8;
+    --void: #05030f;
+    --violet: #7c4fd0;
+    --lavender: #b48fff;
+  }
 
-    #label{
-        color: #4af0e8;
-        font-size: 0.9rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        font-family: 'Space Mono', monospace;
-        margin: 0 0 0.5rem 0;
-    }
+  #projects {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 8rem 2rem 4rem 2rem;
+    min-height: 100vh;
+  }
 
-    #title{
-        color: white;
-        font-size: 3rem;
-        font-weight: 700;
-        margin: 0 0 3rem 0;
-    }
+  .section-label {
+    color: var(--cyan);
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: 'Space Mono', monospace;
+    margin: 0 0 0.5rem 0;
+  }
 
-    #project-grid{
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 1.5rem;
-    }
+  .section-title {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 2rem 0;
+  }
 
+  #project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
 
+  .cta-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cta-row a {
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--pink), var(--violet));
+    color: white;
+  }
+
+  .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
+  }
+
+  .btn-secondary:hover {
+    background: var(--cyan);
+    color: var(--void);
+    transform: translateY(-2px);
+  }
 </style>
