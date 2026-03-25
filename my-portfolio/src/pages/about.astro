@@ -7,24 +7,30 @@ import Layout from '../layouts/Layout.astro';
     <p class="section-label">About Me</p>
     <h1 class="section-title" transition:name="page-title">Who Am I</h1>
     <p class="section-text">
-      I'm Pakaphon Suksena, a developer and creator based in Thailand.
-      I build web portfolios, Roblox games, Python tools, and educational
-      content. I go by Momoiroart online.
+      I'm Pakaphon Suksena — a developer and creator from Thailand who goes by
+      <strong>momoiroart</strong> online. I started out using AI tools to build sites,
+      then got curious about how the code actually works. Now I build everything from
+      web portfolios and Roblox games to Python tools, Discord bots, and educational
+      content that helps others learn to build too.
     </p>
 
     <div class="section-subtitle">What I Work With</div>
     <div id="skill-grid">
       <div class="skill-card">
         <h3>Web Development</h3>
-        <p>Astro, React, HTML, CSS, Vercel</p>
+        <p>Astro, React, Three.js, Tailwind CSS, Vite, Vercel</p>
       </div>
       <div class="skill-card">
         <h3>Game Development</h3>
-        <p>Roblox Studio, Unity, Unreal, Pygame, RPG Maker</p>
+        <p>Roblox Studio (Luau), Python + Pygame, RPG Maker</p>
       </div>
       <div class="skill-card">
-        <h3>Educational</h3>
-        <p>Roblox Game design, Unity Fundamental, Minecraft modding</p>
+        <h3>Bots & Tools</h3>
+        <p>Discord bots, Claude API, MCP servers, Node.js</p>
+      </div>
+      <div class="skill-card">
+        <h3>Educational Content</h3>
+        <p>Minecraft modding courses, Roblox game design, web dev tutorials</p>
       </div>
     </div>
 
@@ -87,6 +93,12 @@ import Layout from '../layouts/Layout.astro';
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin-bottom: 3rem;
+  }
+
+  /* strong tag inside bio text */
+  .section-text strong {
+    color: #ff6b9d;
+    font-weight: 600;
   }
 
   .skill-card {

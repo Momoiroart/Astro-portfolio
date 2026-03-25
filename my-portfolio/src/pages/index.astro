@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const currentPath = Astro.url.pathname;
 ---
 
 <Layout isHome={true}>
@@ -16,18 +15,19 @@ const currentPath = Astro.url.pathname;
 
     <!-- INLINE NAV FOR HOME PAGE: Links below the typing text -->
     <nav id="home-nav">
-      <a href="/about" class={currentPath === '/about' || currentPath === '/about/' ? 'nav-active' : ''}>About</a>
+      <a href="/about">About</a>
       <span class="nav-sep">|</span>
-      <a href="/projects" class={currentPath === '/projects' || currentPath === '/projects/' ? 'nav-active' : ''}>Projects</a>
+      <a href="/projects">Projects</a>
     </nav>
 
     <div id="tags">
-      <span class="tag">Web Dev</span>
+      <span class="tag">Astro</span>
+      <span class="tag">React</span>
       <span class="tag">Roblox / Luau</span>
-      <span class="tag">Unity</span>
-      <span class="tag">Unreal Engine</span>
       <span class="tag">Python</span>
+      <span class="tag">Three.js</span>
       <span class="tag">Game Dev</span>
+      <span class="tag">Discord Bots</span>
       <span class="tag">Educational Content</span>
     </div>
     <div id="buttons">
@@ -41,9 +41,10 @@ const currentPath = Astro.url.pathname;
 <script>
   const roles = [
     "Web Developer.",
+    "Roblox Creator.",
     "Game Developer.",
     "Educator.",
-    "Roblox Creator.",
+    "Discord Bot Dev.",
     "Python Enthusiast."
   ];
 
@@ -272,3 +273,4 @@ const currentPath = Astro.url.pathname;
     }
   }
 </style>
+

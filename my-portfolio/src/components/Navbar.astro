@@ -60,8 +60,7 @@ const isActive = (path: string) => {
   #nav-links a {
     color: #b48fff;
     text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 0.95rem;
     transition: color 0.3s ease;
     padding-bottom: 4px;
     border-bottom: 2px solid transparent;
@@ -76,3 +75,25 @@ const isActive = (path: string) => {
     border-bottom: 2px solid #4af0e8;
   }
 </style>
+
+<script>
+  // Update active nav link after every page transition
+  // (needed because transition:persist keeps the navbar alive across pages)
+  function updateActiveLink() {
+    const path = window.location.pathname;
+    const links = document.querySelectorAll('#nav-links a');
+
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+      // Check if this link matches the current page
+      const isActive = href === path || href === path.replace(/\/$/, '');
+      link.classList.toggle('nav-active', isActive);
+    });
+  }
+
+  // Run on first load
+  updateActiveLink();
+
+  // Run after every Astro page transition
+  document.addEventListener('astro:page-load', updateActiveLink);
+</script>
