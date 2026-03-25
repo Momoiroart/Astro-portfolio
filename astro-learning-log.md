@@ -20,7 +20,7 @@
 7. ✅ Style the site with CSS (brand colors, flexbox, fixed nav, hover effects)
 8. ✅ Add About page with skills grid
 9. ✅ Push to GitHub
-10. ⬜ Build Projects page
+10. ✅ Build Projects page (ProjectCard with props + grid layout)
 11. ✅ Deploy live on Vercel → https://astro-portfolio-bay-psi.vercel.app/
 
 ---
@@ -137,6 +137,13 @@ my-portfolio/
 - `padding` shorthand = top right bottom left (clockwise from top)
 - `var(--name)` = use a CSS variable defined in `:root {}`
 - `display: flex` + `justify-content: space-between` = push items to opposite ends
+- `Astro.props` = how a component receives data from its parent
+- `const { title, description } = Astro.props` = unpack props into variables
+- `{title}` in HTML = insert a JavaScript variable's value
+- `{array.map((item) => ...)}` = loop through an array and render HTML for each item
+- `display: grid` + `grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))` = responsive grid
+- Common bugs: typos in selectors, missing decimal points, elements outside their parent tags
+- Debug tip: if styles don't apply, check CSS selector matches HTML class/id exactly
 
 ---
 
@@ -165,8 +172,11 @@ Once you understand your code, you can give AI tools very specific instructions:
 | 2026-03-23 | Built About page | New page from scratch, CSS Grid 2x2 layout, customized own content |
 | 2026-03-23 | Pushed to GitHub | https://github.com/Momoiroart/Astro-portfolio — 12 commits live |
 | 2026-03-23 | Deployed to Vercel | https://astro-portfolio-bay-psi.vercel.app/ — site is LIVE |
+| 2026-03-24 | Built ProjectCard component | Learned props, Astro.props, {curly braces} for dynamic values, .map() for arrays |
+| 2026-03-24 | Built Projects page | Used ProjectCard 3 times with different data, CSS Grid auto-fill |
+| 2026-03-24 | Debugged 6 bugs solo | Typos, mismatched selectors, missing units, misplaced elements |
 | | | |
 
 ---
 
-*Last updated: 2026-03-23*
+*Last updated: 2026-03-24*

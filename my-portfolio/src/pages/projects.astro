@@ -5,11 +5,62 @@ import ProjectCard from "../components/ProjectCard.astro";
 
 <Layout>
     <section id="projects">
-        <p id="lable">My Work</p>
+        <p id="label">My Work</p>
         <h1 id="title">Projects</h1>
 
         <div id="project-grid">
+            <ProjectCard
+                title="Your Life Style"
+                description="A cozy Roblox life sim with dialogue, NPCs, and relationships."
+                tags={["Roblox","Luau","GameDev"]}
+                link="https://www.roblox.com/games/your-life-style"
+            />
+            <ProjectCard
+                title="Momoiro Portfolio"
+                description="My personal art portfolio with cosmic apace aesthetic."
+                tags={["HTML","CSS","Vercel"]}
+                link="https://momoiro-portfolio-dual.vercel.app"
+            />
+            <ProjectCard
+                title="Learn Guide"
+                description="Educational site for AI tutorials with dark edu-tech theme."
+                tags={["Astro","React","Vercel"]}
+                link="https://learn-guide.vercel.app"
+            />
             <!-- We'll add cards here -->
         </div>
     </section>
 </Layout>
+
+
+<style>
+    #projects {
+        max-width: 10000px;
+        margin: 0 auto;
+        padding: 8rem 2rem 4rem 2rem;
+    }
+
+    #label{
+        color: #4af0e8;
+        font-size: 0.9rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-family: 'Space Mono', monospace;
+        margin: 0 0 0.5rem 0;
+    }
+
+    #title{
+        color: white;
+        font-size: 3rem;
+        font-weight: 700;
+        margin: 0 0 3rem 0;
+    }
+
+    #project-grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+
+</style>

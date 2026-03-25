@@ -2,7 +2,7 @@
 const {title, description, tags, link} = Astro.props;
 ---
 
-<a href = {link} target="'_blank" class ='card'>
+<a href = {link} target="_blank" class ='card'>
     <h3 class="card-title">{title}</h3>
     <p class="card-desc">{description}</p>
     <div class="card-tags">
@@ -22,7 +22,7 @@ const {title, description, tags, link} = Astro.props;
         border-radius: 12px;
         padding: 1.5rem;
         text-decoration: none;
-        transition: all 03.s ease;
+        transition: all 0.3s ease;
     }
 
     .card:hover{
@@ -40,7 +40,7 @@ const {title, description, tags, link} = Astro.props;
     .card-desc {
         color: #a0a0b0;
         font-size: 0.9rem;
-        line-height: 16;
+        line-height: 1.6;
         margin: 0 0 1rem 0;
     }
 
@@ -50,7 +50,7 @@ const {title, description, tags, link} = Astro.props;
         gap: 0.5rem;
     }
 
-    .tags {
+    .tag {
         border: 1px solid rgba(124, 79, 208, 0.9);
         color: #b48fff;
         padding: 0.2rem 0.6rem;
