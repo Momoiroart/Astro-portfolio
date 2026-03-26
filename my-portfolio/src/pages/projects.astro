@@ -8,7 +8,7 @@ import ProjectCard from "../components/ProjectCard.astro";
     <p class="section-label">My Work</p>
     <h1 class="section-title" transition:name="page-title">Projects</h1>
 
-    <div id="project-grid">
+    <div id="project-grid" data-animate>
       <ProjectCard
         title="Momoiro Portfolio"
         description="My main art and dev portfolio with a cosmic space aesthetic. Built with static HTML and deployed on Vercel."
@@ -121,9 +121,4 @@ import ProjectCard from "../components/ProjectCard.astro";
     border: 1px solid var(--cyan);
   }
 
-  .btn-secondary:hover {
-    background: var(--cyan);
-    color: var(--void);
-    transform: translateY(-2px);
-  }
-</style>
+ 

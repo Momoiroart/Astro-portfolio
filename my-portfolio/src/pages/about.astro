@@ -4,40 +4,190 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
   <section id="about">
+
+    <!-- HEADER -->
     <p class="section-label">About Me</p>
     <h1 class="section-title" transition:name="page-title">Who Am I</h1>
-    <p class="section-text">
-      I'm Pakaphon Suksena — a developer and creator from Thailand who goes by
-      <strong>momoiroart</strong> online. I started out using AI tools to build sites,
-      then got curious about how the code actually works. Now I build everything from
-      web portfolios and Roblox games to Python tools, Discord bots, and educational
-      content that helps others learn to build too.
-    </p>
 
-    <div class="section-subtitle">What I Work With</div>
+    <!-- PHOTO + BIO ROW -->
+    <div id="intro-row">
+      <div id="photo-wrap">
+        <img src="/me1.png" alt="Pakaphon Suksena" id="profile-photo" />
+      </div>
+      <p class="section-text">
+        I'm Pakaphon Suksena — a developer and creator from Thailand, known online as
+        <strong>momoiroart</strong>. I've been writing code since high school, then followed
+        my love for game design into a Media branch of Information Technology at university.
+        But I never stopped coding — I kept both going side by side, picking up
+        Python, C#, C++, Java, JavaScript, and Luau along the way.
+        <br /><br />
+        When AI tools rose, I leaned into them fully — not to replace learning, but to
+        accelerate it. I use AI to explore new languages and frameworks faster than ever.
+        This portfolio itself was built in Astro, a framework I learned from scratch with
+        AI as my guide. Now I build web portfolios, Roblox games, Discord bots, and
+        educational content that helps others start the same journey.
+      </p>
+    </div>
+
+    <!-- SKILL CATEGORY CARDS -->
+    <div class="section-subtitle" data-animate>What I Work With</div>
     <div id="skill-grid">
-      <div class="skill-card">
+      <div class="skill-card" data-animate data-delay="1">
         <h3>Web Development</h3>
         <p>Astro, React, Three.js, Tailwind CSS, Vite, Vercel</p>
       </div>
-      <div class="skill-card">
+      <div class="skill-card" data-animate data-delay="2">
         <h3>Game Development</h3>
         <p>Roblox Studio (Luau), Python + Pygame, RPG Maker</p>
       </div>
-      <div class="skill-card">
+      <div class="skill-card" data-animate data-delay="3">
         <h3>Bots & Tools</h3>
         <p>Discord bots, Claude API, MCP servers, Node.js</p>
       </div>
-      <div class="skill-card">
+      <div class="skill-card" data-animate data-delay="4">
         <h3>Educational Content</h3>
         <p>Minecraft modding courses, Roblox game design, web dev tutorials</p>
       </div>
     </div>
 
+    <!-- STATS ROW -->
+    <div class="section-subtitle" data-animate>By the Numbers</div>
+    <div id="stats-row">
+      <div class="stat-card" data-animate data-delay="1">
+        <span class="stat-number">1,068</span>
+        <span class="stat-label">Classes Taught</span>
+      </div>
+      <div class="stat-card" data-animate data-delay="2">
+        <span class="stat-number">1,642</span>
+        <span class="stat-label">Students Taught</span>
+      </div>
+      <div class="stat-card" data-animate data-delay="3">
+        <span class="stat-number">10</span>
+        <span class="stat-label">Courses</span>
+      </div>
+      <div class="stat-card" data-animate data-delay="4">
+        <span class="stat-number">6+</span>
+        <span class="stat-label">Dev Projects</span>
+      </div>
+    </div>
+
+    <!-- SKILL BARS -->
+    <div class="section-subtitle" data-animate>Skill Levels</div>
+    <div id="skill-bars">
+      <div class="bar-row" data-animate data-delay="1">
+        <span class="bar-label">Luau (Roblox)</span>
+        <span class="bar-pct">85%</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 85%"></div></div>
+      </div>
+      <div class="bar-row" data-animate data-delay="2">
+        <span class="bar-label">Python</span>
+        <span class="bar-pct">80%</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 80%"></div></div>
+      </div>
+      <div class="bar-row" data-animate data-delay="3">
+        <span class="bar-label">HTML / CSS</span>
+        <span class="bar-pct">60%</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 60%"></div></div>
+      </div>
+      <div class="bar-row" data-animate data-delay="4">
+        <span class="bar-label">JavaScript</span>
+        <span class="bar-pct">50%</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 50%"></div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Astro / React</span>
+        <span class="bar-pct">40%</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 40%"></div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Three.js</span>
+        <span class="bar-pct">30%</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 30%"></div></div>
+      </div>
+    </div>
+
+    <!-- INTERESTS -->
+    <div class="section-subtitle" data-animate>Interests</div>
+    <div id="interests-grid">
+      <div class="interest-card">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+        </svg>
+        <span>Game Dev</span>
+      </div>
+      <div class="interest-card">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <span>Web Design</span>
+      </div>
+      <div class="interest-card">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+        </svg>
+        <span>Education</span>
+      </div>
+      <div class="interest-card">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+        </svg>
+        <span>AI & Bots</span>
+      </div>
+      <div class="interest-card">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+        </svg>
+        <span>Music</span>
+      </div>
+      <div class="interest-card">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+        <span>Roblox</span>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <div class="section-subtitle" data-animate>Kind Words</div>
+    <div id="testimonials">
+      <div class="testimonial-card" data-animate data-delay="1">
+        <p class="quote">"Pakaphon has a great ability to pick up new technologies quickly and apply them creatively. His work on educational content is genuinely helpful for beginners."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">S</div>
+          <div>
+            <span class="author-name">Placeholder Name</span>
+            <span class="author-role">Update with a real testimonial</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="quote">"Working with momoiroart is always a good experience. He brings both technical skill and creative vision to every project he takes on."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">P</div>
+          <div>
+            <span class="author-name">Placeholder Name</span>
+            <span class="author-role">Update with a real testimonial</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="quote">"His Roblox game design courses are detailed and well-structured. You can tell he genuinely cares about helping students understand the material."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">M</div>
+          <div>
+            <span class="author-name">Placeholder Name</span>
+            <span class="author-role">Update with a real testimonial</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
     <div class="cta-row">
       <a href="/projects" class="btn-primary">View Projects</a>
       <a href="/" class="btn-secondary">Back Home</a>
     </div>
+
   </section>
 </Layout>
 
@@ -51,10 +201,9 @@ import Layout from '../layouts/Layout.astro';
   }
 
   #about {
-    max-width: 800px;
+    max-width: 860px;
     margin: 0 auto;
-    padding: 8rem 2rem 4rem 2rem;
-    min-height: 100vh;
+    padding: 8rem 2rem 6rem 2rem;
   }
 
   .section-label {
@@ -73,32 +222,63 @@ import Layout from '../layouts/Layout.astro';
     margin: 0 0 1.5rem 0;
   }
 
+  /* PHOTO + BIO ROW */
+  #intro-row {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+  }
+
+  #photo-wrap {
+    flex-shrink: 0;
+  }
+
+  #profile-photo {
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid rgba(124, 79, 208, 0.4);
+    filter: grayscale(20%);
+    transition: filter 0.3s ease, border-color 0.3s ease;
+  }
+
+  #profile-photo:hover {
+    filter: grayscale(0%);
+    border-color: var(--pink);
+  }
+
   .section-text {
     color: #a0a0b0;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     line-height: 1.8;
-    max-width: 600px;
-    margin: 0 0 3rem 0;
+    margin: 0;
+  }
+
+  .section-text strong {
+    color: var(--pink);
+    font-weight: 600;
   }
 
   .section-subtitle {
     color: var(--lavender);
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: 'Space Mono', monospace;
+    margin: 0 0 1.25rem 0;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(124, 79, 208, 0.15);
   }
 
+  /* SKILL CATEGORY CARDS */
   #skill-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    margin-bottom: 3rem;
-  }
-
-  /* strong tag inside bio text */
-  .section-text strong {
-    color: #ff6b9d;
-    font-weight: 600;
+    margin-bottom: 1rem;
   }
 
   .skill-card {
@@ -127,10 +307,200 @@ import Layout from '../layouts/Layout.astro';
     line-height: 1.6;
   }
 
+  /* STATS ROW */
+  #stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .stat-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(124, 79, 208, 0.25);
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    transition: border-color 0.3s ease;
+  }
+
+  .stat-card:hover {
+    border-color: var(--cyan);
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Space Mono', monospace;
+    background: linear-gradient(135deg, var(--cyan), var(--lavender));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .stat-label {
+    color: #a0a0b0;
+    font-size: 0.85rem;
+  }
+
+  /* SKILL BARS */
+  #skill-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .bar-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 0.3rem 0.5rem;
+    align-items: center;
+  }
+
+  .bar-label {
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .bar-pct {
+    color: var(--cyan);
+    font-size: 0.9rem;
+    font-family: 'Space Mono', monospace;
+    text-align: right;
+  }
+
+  .bar-track {
+    grid-column: 1 / -1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--violet), var(--cyan));
+    border-radius: 999px;
+    transition: width 1s ease;
+  }
+
+  /* INTERESTS */
+  #interests-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .interest-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(124, 79, 208, 0.25);
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--lavender);
+    transition: all 0.3s ease;
+  }
+
+  .interest-card:hover {
+    border-color: var(--pink);
+    color: var(--pink);
+    transform: translateY(-2px);
+  }
+
+  .interest-card svg {
+    flex-shrink: 0;
+  }
+
+  .interest-card span {
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  /* TESTIMONIALS */
+  #testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(124, 79, 208, 0.25);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .quote {
+    color: #a0a0b0;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .quote::before {
+    content: '"';
+    color: var(--violet);
+    font-size: 2rem;
+    line-height: 0;
+    vertical-align: -0.5rem;
+    margin-right: 0.2rem;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--violet), var(--pink));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .author-name {
+    display: block;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .author-role {
+    display: block;
+    color: #a0a0b0;
+    font-size: 0.8rem;
+  }
+
+  /* CTA BUTTONS */
   .cta-row {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(124, 79, 208, 0.15);
+    margin-top: 1rem;
   }
 
   .cta-row a {
@@ -161,7 +531,18 @@ import Layout from '../layouts/Layout.astro';
     transform: translateY(-2px);
   }
 
-  @media (max-width: 600px) {
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    #intro-row { flex-direction: column; }
+    #profile-photo { width: 100%; height: 260px; }
+    #stats-row { grid-template-columns: repeat(2, 1fr); }
+    #interests-grid { grid-template-columns: repeat(2, 1fr); }
+    #testimonials { grid-template-columns: 1fr; }
     #skill-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    #stats-row { grid-template-columns: repeat(2, 1fr); }
+    #interests-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
