@@ -301,4 +301,18 @@ import Layout from '../layouts/Layout.astro';
   }
 
   #social-links a {
-    color: va
+    color: var(--lavender);
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+  }
+
+  #social-links a:hover {
+    color: var(--cyan);
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 480px) {
+    #buttons { flex-direction: column; }
+  }
+</style>
