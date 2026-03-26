@@ -129,7 +129,9 @@ const isActive = (path: string) => {
 
   function initThemeToggle() {
     const btn = document.getElementById('theme-toggle');
-    btn?.addEventListener('click', () => {
+    if (!btn || btn.dataset.listenerAdded) return;
+    btn.dataset.listenerAdded = 'true';
+    btn.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-theme');
       const next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
