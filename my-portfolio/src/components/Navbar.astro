@@ -81,14 +81,15 @@ const isActive = (path: string) => {
   // Update active nav link after every page transition
   // (needed because transition:persist keeps the navbar alive across pages)
   function updateActiveLink() {
-    const path = window.location.pathname;
+    const rawPath = window.location.pathname;
+    // Normalize: remove trailing slash, but keep root '/' as-is
+    const path = rawPath === '/' ? '/' : rawPath.replace(/\/$/, '');
     const links = document.querySelectorAll('#nav-links a');
 
     links.forEach(link => {
-      const href = link.getAttribute('href');
-      // Check if this link matches the current page
-      const isActive = href === path || href === path.replace(/\/$/, '');
-      link.classList.toggle('nav-active', isActive);
+      const href = link.getAttribute('href') ?? '';
+      const normalizedHref = href === '/' ? '/' : href.replace(/\/$/, '');
+      link.classList.toggle('nav-active', normalizedHref === path);
     });
   }
 
