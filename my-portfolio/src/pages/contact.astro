@@ -109,13 +109,6 @@ import Layout from '../layouts/Layout.astro';
 </script>
 
 <style>
-  :root {
-    --pink: #ff6b9d;
-    --cyan: #4af0e8;
-    --void: #05030f;
-    --violet: #7c4fd0;
-    --lavender: #b48fff;
-  }
 
   #contact {
     max-width: 800px;
@@ -134,14 +127,14 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .section-title {
-    color: white;
+    color: var(--text-strong);
     font-size: 3rem;
     font-weight: 700;
     margin: 0 0 1.5rem 0;
   }
 
   .section-text {
-    color: #a0a0b0;
+    color: var(--text);
     font-size: 1.05rem;
     line-height: 1.8;
     max-width: 560px;
@@ -160,8 +153,8 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(124, 79, 208, 0.25);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1.25rem 1.5rem;
     text-decoration: none;
@@ -191,7 +184,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .contact-label {
-    color: #a0a0b0;
+    color: var(--text);
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -199,28 +192,28 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .contact-value {
-    color: white;
+    color: var(--text-strong);
     font-size: 0.95rem;
     font-weight: 500;
   }
 
   /* MESSAGE FORM */
   #message-box {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(124, 79, 208, 0.25);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: 16px;
     padding: 2rem;
   }
 
   .message-title {
-    color: white;
+    color: var(--text-strong);
     font-size: 1.4rem;
     font-weight: 700;
     margin: 0 0 0.4rem 0;
   }
 
   .message-sub {
-    color: #a0a0b0;
+    color: var(--text);
     font-size: 0.9rem;
     margin: 0 0 1.5rem 0;
   }
@@ -241,10 +234,10 @@ import Layout from '../layouts/Layout.astro';
   .form-group input,
   .form-group textarea {
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(124, 79, 208, 0.3);
+    border: 1px solid var(--border);
     border-radius: 8px;
     padding: 0.75rem 1rem;
-    color: white;
+    color: var(--text-strong);
     font-family: 'Outfit', sans-serif;
     font-size: 0.95rem;
     resize: vertical;
@@ -259,7 +252,7 @@ import Layout from '../layouts/Layout.astro';
 
   .btn-send {
     background: linear-gradient(135deg, var(--pink), var(--violet));
-    color: white;
+    color: var(--text-strong);
     border: none;
     padding: 0.75rem 2rem;
     border-radius: 8px;

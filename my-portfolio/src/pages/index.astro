@@ -115,13 +115,6 @@ import Layout from '../layouts/Layout.astro';
 </script>
 
 <style>
-  :root {
-    --pink: #ff6b9d;
-    --cyan: #4af0e8;
-    --void: #05030f;
-    --violet: #7c4fd0;
-    --lavender: #b48fff;
-  }
 
   #hero {
     min-height: 100vh;
@@ -156,7 +149,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   #name {
-    color: white;
+    color: var(--text-strong);
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 700;
     margin: 0 0 0.25rem 0;
@@ -176,7 +169,7 @@ import Layout from '../layouts/Layout.astro';
 
   /* TYPING EFFECT STYLES */
   #typed-text {
-    color: #a0a0b0;
+    color: var(--text);
     font-size: 1.2rem;
     line-height: 1.6;
     margin: 0 0 2rem 0;
@@ -211,7 +204,7 @@ import Layout from '../layouts/Layout.astro';
     padding: 0.4rem 0.8rem;
     border-radius: 6px;
     background: rgba(124, 79, 208, 0.15);
-    border: 1px solid rgba(124, 79, 208, 0.3);
+    border: 1px solid var(--border);
     transition: all 0.2s ease;
   }
 
@@ -272,7 +265,7 @@ import Layout from '../layouts/Layout.astro';
 
   .btn-primary {
     background: linear-gradient(135deg, var(--pink), var(--violet));
-    color: white;
+    color: var(--text-strong);
   }
 
   .btn-primary:hover {

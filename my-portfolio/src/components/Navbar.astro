@@ -1,8 +1,5 @@
 ---
-// Get the current page URL to highlight the active nav link
 const currentPath = Astro.url.pathname;
-
-// Helper function to check if path matches (handles /about, /about/, etc)
 const isActive = (path: string) => {
   return currentPath === path || currentPath === path + '/';
 };
@@ -17,6 +14,26 @@ const isActive = (path: string) => {
       <li><a href="/projects" class={isActive('/projects') ? 'nav-active' : ''}>Projects</a></li>
       <li><a href="/contact" class={isActive('/contact') ? 'nav-active' : ''}>Contact</a></li>
     </ul>
+
+    <!-- THEME TOGGLE BUTTON -->
+    <button id="theme-toggle" aria-label="Toggle theme">
+      <!-- Moon icon (shown in dark mode) -->
+      <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+      <!-- Sun icon (shown in light mode) -->
+      <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/>
+        <line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/>
+        <line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+    </button>
   </div>
 </nav>
 
@@ -26,13 +43,13 @@ const isActive = (path: string) => {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(5, 3, 15, 0.9);
+    background: var(--navbar-bg);
     backdrop-filter: blur(12px);
     z-index: 100;
-    border-bottom: 1px solid rgba(124, 79, 208, 0.15);
+    border-bottom: 1px solid var(--navbar-border);
+    transition: background 0.3s ease, border-color 0.3s ease;
   }
 
-  /* Inner container limits width and centers everything */
   .nav-inner {
     max-width: 900px;
     margin: 0 auto;
@@ -43,7 +60,7 @@ const isActive = (path: string) => {
   }
 
   #logo {
-    color: #ff6b9d;
+    color: var(--pink);
     text-decoration: none;
     font-size: 1.4rem;
     font-weight: 700;
@@ -59,7 +76,7 @@ const isActive = (path: string) => {
   }
 
   #nav-links a {
-    color: #b48fff;
+    color: var(--lavender);
     text-decoration: none;
     font-size: 0.95rem;
     transition: color 0.3s ease;
@@ -67,25 +84,42 @@ const isActive = (path: string) => {
     border-bottom: 2px solid transparent;
   }
 
-  #nav-links a:hover {
-    color: #4af0e8;
-  }
+  #nav-links a:hover { color: var(--cyan); }
 
   #nav-links a.nav-active {
-    color: #4af0e8;
-    border-bottom: 2px solid #4af0e8;
+    color: var(--cyan);
+    border-bottom: 2px solid var(--cyan);
   }
+
+  /* THEME TOGGLE */
+  #theme-toggle {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.4rem 0.5rem;
+    cursor: pointer;
+    color: var(--lavender);
+    display: flex;
+    align-items: center;
+    transition: border-color 0.2s ease, color 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  #theme-toggle:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+  }
+
+  /* Show/hide correct icon based on theme */
+  [data-theme="dark"]  #icon-sun  { display: none; }
+  [data-theme="light"] #icon-moon { display: none; }
 </style>
 
 <script>
-  // Update active nav link after every page transition
-  // (needed because transition:persist keeps the navbar alive across pages)
   function updateActiveLink() {
     const rawPath = window.location.pathname;
-    // Normalize: remove trailing slash, but keep root '/' as-is
     const path = rawPath === '/' ? '/' : rawPath.replace(/\/$/, '');
     const links = document.querySelectorAll('#nav-links a');
-
     links.forEach(link => {
       const href = link.getAttribute('href') ?? '';
       const normalizedHref = href === '/' ? '/' : href.replace(/\/$/, '');
@@ -93,9 +127,21 @@ const isActive = (path: string) => {
     });
   }
 
-  // Run on first load
-  updateActiveLink();
+  function initThemeToggle() {
+    const btn = document.getElementById('theme-toggle');
+    btn?.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  }
 
-  // Run after every Astro page transition
-  document.addEventListener('astro:page-load', updateActiveLink);
+  updateActiveLink();
+  initThemeToggle();
+
+  document.addEventListener('astro:page-load', () => {
+    updateActiveLink();
+    initThemeToggle();
+  });
 </script>

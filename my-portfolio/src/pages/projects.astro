@@ -55,13 +55,6 @@ import ProjectCard from "../components/ProjectCard.astro";
 </Layout>
 
 <style>
-  :root {
-    --pink: #ff6b9d;
-    --cyan: #4af0e8;
-    --void: #05030f;
-    --violet: #7c4fd0;
-    --lavender: #b48fff;
-  }
 
   #projects {
     max-width: 1000px;
@@ -80,7 +73,7 @@ import ProjectCard from "../components/ProjectCard.astro";
   }
 
   .section-title {
-    color: white;
+    color: var(--text-strong);
     font-size: 3rem;
     font-weight: 700;
     margin: 0 0 2rem 0;
@@ -110,7 +103,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 
   .btn-primary {
     background: linear-gradient(135deg, var(--pink), var(--violet));
-    color: white;
+    color: var(--text-strong);
   }
 
   .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
